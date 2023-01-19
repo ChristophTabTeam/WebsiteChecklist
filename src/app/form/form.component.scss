@@ -1,0 +1,37 @@
+h1, h2, h3, h4, h5, p {
+  font-weight: 300;
+}
+
+.grid-2-column {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 40px;
+}
+
+.radio-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.button-row {
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.btn {
+  font-size: 1.2rem;
+  padding: 30px;
+}
+
+@media (max-width: 620px) {
+  .grid-2-column {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 450px) {
+  h1 {
+    font-size: 1.75rem;
+  }
+}

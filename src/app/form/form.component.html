@@ -1,0 +1,232 @@
+<div *ngIf="!submited">
+  <div class="header">
+    <h1>Website Checklist</h1>
+    <p>
+      Um Dir und uns die Arbeit zu erleichtern, haben wir hier eine Checkliste
+      erstellt, mit deren Hilfe du abgleichen kannst, ob dir gewisse Daten
+      bereits vorliegen oder nicht.
+    </p>
+    <p>Das Ausfüllen der Umfrage dauert ungefähr 4 Minuten.</p>
+  </div>
+  <form [formGroup]="form" (ngSubmit)="submitForm()">
+    <section>
+      <h2>Persönliche Angaben</h2>
+      <p>
+        Bitte gib hier Deine persönlichen Informationen an, damit wir das
+        Formular zuordnen können
+      </p>
+      <div class="grid-2-column">
+        <div class="question">
+          <h3>Vor- und Nachname</h3>
+          <mat-form-field appearance="fill" style="width: 100%">
+            <mat-label>Vor- und Nachname</mat-label>
+            <input matInput type="text" name="name" formControlName="name" />
+          </mat-form-field>
+        </div>
+        <div class="question">
+          <h3>Firmenname</h3>
+          <mat-form-field appearance="fill" style="width: 100%">
+            <mat-label>Firmenname</mat-label>
+            <input
+              matInput
+              type="text"
+              name="companyName"
+              formControlName="companyName"
+            />
+          </mat-form-field>
+        </div>
+        <div class="question">
+          <h3>E-Mail</h3>
+          <mat-form-field appearance="fill" style="width: 100%">
+            <mat-label>E-Mail</mat-label>
+            <input matInput type="email" name="email" formControlName="email" />
+          </mat-form-field>
+        </div>
+        <div class="question">
+          <h3>Telefonnummer</h3>
+          <mat-form-field appearance="fill" style="width: 100%">
+            <mat-label>Telefonnummer</mat-label>
+            <input
+              matInput
+              type="phone"
+              name="phoneNumber"
+              formControlName="phoneNumber"
+            />
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="question">
+        <h3>Branche</h3>
+        <mat-form-field appearance="fill" style="width: 100%">
+          <mat-label>Branche</mat-label>
+          <input
+            matInput
+            type="text"
+            name="branche"
+            formControlName="branche"
+          />
+        </mat-form-field>
+      </div>
+    </section>
+    <section>
+      <h2>Website Basics</h2>
+      <div class="question">
+        <h3>Zweck der Website</h3>
+        <mat-radio-group
+          aria-labelledby="radio-group-label"
+          class="radio-group"
+          formControlName="usageOfWebsite"
+          style="display: flex; flex-direction: column"
+        >
+          <mat-radio-button class="radio-button" value="0"
+            >Verkauf von Produkten</mat-radio-button
+          >
+          <mat-radio-button class="radio-button" value="1"
+            >Vermittlung von Informationen</mat-radio-button
+          >
+          <mat-radio-button class="radio-button" value="2"
+            >Online Präsenz für mein Unternehmen</mat-radio-button
+          >
+        </mat-radio-group>
+      </div>
+      <div class="question">
+        <h3>Design</h3>
+        <mat-radio-group
+          aria-labelledby="radio-group-label"
+          class="radio-group"
+          formControlName="design"
+        >
+          <mat-radio-button class="radio-button" value="0"
+            >Ich habe bereits ein Designkonzept, das ich gerne verwenden
+            möchte.</mat-radio-button
+          >
+          <mat-radio-button class="radio-button" value="1"
+            >Ich habe einige Vorlieben für Farben und Schriftarten, die
+            berücksichtigt werden sollen.</mat-radio-button
+          >
+          <mat-radio-button class="radio-button" value="2"
+            >Ich möchte, dass ihr ein individuelles Design für mich
+            erstellt.</mat-radio-button
+          >
+        </mat-radio-group>
+      </div>
+      <div class="question">
+        <h3>Funktionalitäten</h3>
+        <p>
+          <mat-checkbox formControlName="form"> Kontaktformular </mat-checkbox>
+        </p>
+        <p>
+          <mat-checkbox formControlName="newsletter">
+            Newsletter Anmeldebereich
+          </mat-checkbox>
+        </p>
+        <p>
+          <mat-checkbox formControlName="notSure">
+            Bin mir nicht sicher
+          </mat-checkbox>
+        </p>
+        <mat-form-field appearance="fill">
+          <mat-label>Sonstiges</mat-label>
+          <input
+            matInput
+            type="text"
+            name="companyName"
+            formControlName="other"
+          />
+        </mat-form-field>
+      </div>
+      <div class="question">
+        <h3>Inhalte</h3>
+        <mat-radio-group
+          aria-labelledby="radio-group-label"
+          class="radio-group"
+          formControlName="content"
+        >
+          <mat-radio-button class="radio-button" value="0">
+            Ich habe bereits vorhandene Inhalte, die ich gerne auf der Website
+            veröffentlichen möchte.
+          </mat-radio-button>
+          <mat-radio-button class="radio-button" value="1">
+            Ich möchte, dass ihr für mich Inhalte erstellt.
+          </mat-radio-button>
+        </mat-radio-group>
+      </div>
+    </section>
+    <section>
+      <h2>Website Add-Ons</h2>
+      <div class="question">
+        <h3>Domain und Hosting</h3>
+        <mat-radio-group
+          aria-labelledby="radio-group-label"
+          class="radio-group"
+          formControlName="domainHosting"
+        >
+          <mat-radio-button class="radio-button" value="0">
+            Ich möchte eine eigene Domain und ein eigenes Hosting.
+          </mat-radio-button>
+          <mat-radio-button class="radio-button" value="1">
+            Ich möchte das Hosting von euch übernehmen lassen.
+          </mat-radio-button>
+          <mat-radio-button class="radio-button" value="2">
+            Ich habe bereits ein Hosting und möchte das beibehalten.
+          </mat-radio-button>
+        </mat-radio-group>
+      </div>
+      <div class="question">
+        <h3>Suchmaschinenoptimierung (SEO)</h3>
+        <mat-radio-group
+          aria-labelledby="radio-group-label"
+          class="radio-group"
+          formControlName="seo"
+        >
+          <mat-radio-button class="radio-button" value="0">
+            Ja, ich möchte, dass meine Website von Anfang an für die
+            Suchmaschine optimiert wird.
+          </mat-radio-button>
+          <mat-radio-button class="radio-button" value="1">
+            Nein, ich möchte mich erst später um die Suchmaschinenoptimierung
+            kümmern.
+          </mat-radio-button>
+        </mat-radio-group>
+      </div>
+      <div class="question">
+        <h3>Wartung und Support</h3>
+        <mat-radio-group
+          aria-labelledby="radio-group-label"
+          class="radio-group"
+          formControlName="support"
+        >
+          <mat-radio-button class="radio-button" value="0">
+            Ja, ich möchte regelmäßige Wartungs- und Supportleistungen in
+            Anspruch nehmen.
+          </mat-radio-button>
+          <mat-radio-button class="radio-button" value="1">
+            Nein, ich möchte keine regelmäßigen Wartungs- und Supportleistungen
+            in Anspruch nehmen.
+          </mat-radio-button>
+        </mat-radio-group>
+      </div>
+      <div class="question">
+        <h3>Wartung und Support</h3>
+        <mat-form-field appearance="fill" style="width: 100%">
+          <mat-label>Textarea</mat-label>
+          <textarea matInput formControlName="additionalInfo"></textarea>
+        </mat-form-field>
+      </div>
+    </section>
+    <div class="button-row">
+      <button type="submit" mat-raised-button class="btn">Absenden</button>
+    </div>
+  </form>
+</div>
+<div *ngIf="submited">
+  <h1 style="text-align: center;">Vielen Dank</h1>
+  <p>
+    Wir möchten uns herzlich bei Ihnen bedanken, dass Sie sich die Zeit genommen
+    haben, die Checkliste vor unserem ersten Beratungsgespräch auszufüllen. Dies
+    hilft uns sehr dabei, unsere Beratungen auf Ihre individuellen Bedürfnisse
+    abzustimmen und sicherzustellen, dass wir während des Gesprächs alle
+    wichtigen Punkte ansprechen können. Ihre Zeit und Mühe sind uns sehr wichtig
+    und wir freuen uns darauf, Ihnen in naher Zukunft weiterhelfen zu können.
+  </p>
+</div>

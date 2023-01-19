@@ -1,0 +1,67 @@
+.wrapper {
+  width: 100%;
+  min-height: 100vh;
+  background-image: url(../assets/imgs/TabTeam-Background-ohne-Logo.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.container-default {
+  max-width: 900px;
+  width: 100%;
+  background-color: white;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.img-wrapper {
+  text-align: center;
+}
+
+.inner-wrapper {
+  padding: 50px;
+}
+
+p {
+  font-weight: 300;
+}
+
+footer {
+  background-color: #f1f1f1;
+  padding: 50px;
+  margin-top: 50px;
+  font-size: 0.9rem;
+}
+
+.img {
+  width: 300px;
+  margin: 0 auto;
+}
+
+@media (max-width: 450px) {
+  .img {
+    width: 150px;
+  }
+
+  .inner-wrapper {
+    padding: 30px;
+  }
+
+  footer {
+    padding: 30px;
+    margin-top: 30px;
+  }
+
+  .wrapper {
+    padding: 40px 5px;
+  }
+}
+
+@media (max-width: 300px) {
+  .inner-wrapper {
+    padding: 10px;
+  }
+}
