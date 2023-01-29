@@ -1,22 +1,21 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { environment } from '../../environments/environment.prod';
 
 const headers = new HttpHeaders({
   'Content-Type': 'application/json',
-  'Authorization': `Bearer ${environment.apiKey}`,
+  Authorization: `24dd739a-68dd-4233-8d67-ea05385662ea`,
 });
 
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
-  styleUrls: ['./form.component.scss']
+  styleUrls: ['./form.component.scss'],
 })
 export class FormComponent implements OnInit {
-
   // @Output() submited = new EventEmitter<boolean>();
-  submited: boolean = false
+  submited: boolean = false;
+  isLinear: boolean = false;
 
   constructor(private http: HttpClient) {}
 
@@ -37,19 +36,24 @@ export class FormComponent implements OnInit {
     seo: new FormControl('', Validators.required),
     support: new FormControl('', Validators.required),
     additionalInfo: new FormControl('', Validators.required),
+    privacy: new FormControl(false, Validators.required),
+    conclusion: new FormControl(false, Validators.required)
   });
+
 
   ngOnInit() {}
 
   async submitForm() {
     this.http
-      .post('https://localhost:7108/api/WebsiteChecklists', this.form.value, {headers: headers})
+      .post('https://localhost:7108/api/WebsiteChecklists', this.form.value, {
+        headers: headers,
+      })
       .subscribe((response) => {
         console.log(response);
       });
     setTimeout(() => {
-      this.form.reset()
-      this.submited = true
-    }, 1000)
+      this.form.reset();
+      this.submited = true;
+    }, 1000);
   }
 }

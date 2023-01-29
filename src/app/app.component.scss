@@ -15,6 +15,7 @@
   background-color: white;
   margin: 0 auto;
   text-align: left;
+  border-radius: 25px;
 }
 
 .img-wrapper {
@@ -34,6 +35,8 @@ footer {
   padding: 50px;
   margin-top: 50px;
   font-size: 0.9rem;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
 }
 
 .img {

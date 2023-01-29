@@ -13,6 +13,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
 import { FormComponent } from './form/form.component';
+import { MatStepperModule } from '@angular/material/stepper';
 
 @NgModule({
   declarations: [AppComponent, FormComponent],
@@ -25,6 +26,7 @@ import { FormComponent } from './form/form.component';
     MatIconModule,
     MatInputModule,
     MatRadioModule,
+    MatStepperModule,
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,

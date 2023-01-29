@@ -24,6 +24,11 @@ h1, h2, h3, h4, h5, p {
   padding: 30px;
 }
 
+.container-600 {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
 @media (max-width: 620px) {
   .grid-2-column {
     grid-template-columns: 1fr;
